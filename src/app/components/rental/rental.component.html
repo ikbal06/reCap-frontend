@@ -1,1 +1,9 @@
-<p>rental works!</p>
+<table class="table">
+    <tr *ngFor="let rental of rentals">
+        <td>{{rental.Id}}</td>
+        <td>{{rental.carId}}</td>
+        <td>{{rental.customerName}}</td>
+    </tr>
+
+</table>
+
