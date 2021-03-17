@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color } from 'src/app/models/color';
 
 @Component({
   selector: 'app-color',
@@ -6,17 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
-
-  color1={carId:1,colorName:"siyah"};
-  color2={carId:2,colorName:"beyaz"};
-  color3={carId:3,colorName:"sarı"};
-
-  colors=[
-
-    this.color1,
-    this.color2,
-    this.color3
-  ];
+  colors:Color[]=[];
 
   constructor() { }
 
