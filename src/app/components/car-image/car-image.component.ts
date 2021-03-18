@@ -12,13 +12,13 @@ export class CarImageComponent implements OnInit {
  carimages:CarImage[]=[]
  dataLoaded=false;
 
-  constructor(private ImageService:ImageService) { }
+  constructor(private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.getImages();
   }
   getImages(){
-    this.ImageService.getCarImages().subscribe(response=>{
+    this.imageService.getCarImages().subscribe(response=>{
      this.carimages=response.data
      this.dataLoaded=true;
     })
