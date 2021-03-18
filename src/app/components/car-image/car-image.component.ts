@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarImage } from 'src/app/models/entities/car-image';
+import { ImageService } from 'src/app/services/car-image.service';
 
 @Component({
   selector: 'app-car-image',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarImageComponent implements OnInit {
 
- Images=[];
+ carimages:CarImage[]=[]
+ dataLoaded=false;
 
-  constructor() { }
+  constructor(private ImageService:ImageService) { }
 
   ngOnInit(): void {
+    this.getImages();
+  }
+  getImages(){
+    this.ImageService.getCarImages().subscribe(response=>{
+     this.carimages=response.data
+     this.dataLoaded=true;
+    })
   }
 
 }

@@ -1,8 +1,6 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-import { Car } from 'src/app/models/car';
-import { CarResponseModel } from 'src/app/models/carResponseModel';
+import { Car } from 'src/app/models/entities/car';
+import { CarResponseModel } from 'src/app/models/responses/carResponseModel';
 import { CarService } from 'src/app/services/car.service';
 
 
@@ -25,12 +23,12 @@ export class CarComponent implements OnInit {
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {
- this.getCars();
+  this.getCars();
   }
  getCars(){
-this.carService.getCars().subscribe(response=>{
+  this.carService.getCars().subscribe(response=>{
   this.cars=response.data
-this.dataLoaded=true;
+  this.dataLoaded=true;
 })
 
  }

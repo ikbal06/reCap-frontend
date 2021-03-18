@@ -1,7 +1,16 @@
-<ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-  </ul>
+<table class="table table-success table-striped table-hover table-bordered border-success">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Araba Id</th>
+      <th>Resim Yolu</th>      
+      <th>Tarih</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let image of carimages">
+    <td>{{ image.Id }}</td>
+    <td>{{ image.carId}}</td>
+    <td>{{ image.ImagePath}}</td>
+    <td>{{ image.DateTime }}</td>
+  </tr>
+</table>
