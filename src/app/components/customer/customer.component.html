@@ -1,12 +1,18 @@
-<table class="table table-success table-striped table-hover table-bordered border-success">
+<div *ngIf="dataLoaded==false" class="spinner-border text-secondary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <table *ngIf="dataLoaded==true" class="table">
     <thead>
       <tr>
         <td>Müşteri adı</td>
         <td>Kullanıcı ıd</td>
     </tr>  
     </thead>
-    <tr *ngFor="let customer of customers">
+    <tbody>
+      <tr *ngFor="let customer of customers">
         <td>{{customer.customerName}}</td>
         <td>{{customer.userId}}</td>
-    </tr>  
+    </tr> 
+    </tbody>
+     
 </table>
