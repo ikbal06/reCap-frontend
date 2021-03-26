@@ -1,22 +1,24 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-secondary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<table *ngIf="dataLoaded==true" class="table">
+<table *ngIf="dataLoaded==true" 
+
+class="table">
+
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Araba Id</th>
-      <th>Resim Yolu</th>      
-      <th>Tarih</th>
+      <th>Araba Id</th>     
     </tr>
   </thead>
+
   <tbody>
-    <tr *ngFor="let image of carimages">
-    <td>{{ image.Id }}</td>
+    <tr (click)= "setCurrentCarImage(image)" *ngFor="let image of carimages"
+    routerLink="/cars/image/{{image.carId}}"
+    [class]="getCurrentCarImageClass(image)">
     <td>{{ image.carId}}</td>
-    <td>{{ image.ImagePath}}</td>
-    <td>{{ image.DateTime }}</td>
   </tr>
   </tbody>
   
+  <h5 *ngIf="currentImage">{{currentImage.carId}} seçtiniz</h5>
+
 </table>

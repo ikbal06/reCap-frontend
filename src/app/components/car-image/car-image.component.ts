@@ -9,7 +9,8 @@ import { ImageService } from 'src/app/services/car-image.service';
 })
 export class CarImageComponent implements OnInit {
 
- carimages:CarImage[]=[]
+ carimages:CarImage[]=[];
+ currentImage:CarImage;
  dataLoaded=false;
 
   constructor(private imageService:ImageService) { }
@@ -22,6 +23,18 @@ export class CarImageComponent implements OnInit {
      this.carimages=response.data
      this.dataLoaded=true;
     })
+  }
+
+  setCurrentCarImage(image:CarImage){
+    this.currentImage=image;
+  }
+
+  getCurrentCarImageClass(image:CarImage){
+    if(image==this.currentImage){
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
   }
 
 }

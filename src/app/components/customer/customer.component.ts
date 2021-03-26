@@ -15,7 +15,7 @@ dataLoaded=false;
   constructor(private CustomerService:CustomerService) { }
 
   ngOnInit(): void {
-   this.getCustomers
+   this.getCustomers();
   }
 
   getCustomers(){

@@ -6,10 +6,6 @@
       <tr>
         <th>Id</th>
         <th>Araba Id</th>
-        <th>Müşteri Adı</th>
-        <th>Müşteri Soyadı</th>
-        <th>Marka</th>
-        <th>Yıl</th>
         <th>Kiralama tarihi</th>
         <th>teslim etme tarihi</th>
       </tr>
@@ -18,10 +14,6 @@
       <tr *ngFor="let rental of rentals">
         <td>{{rental.Id}}</td>
         <td>{{rental.carId}}</td>
-        <td>{{rental.customerName}}</td>    
-        <td>{{rental.lastName}}</td>
-        <td>{{rental.brandName}}</td>
-        <td>{{rental.modelYear}}</td>
         <td>{{rental.rentDate}}</td>
         <td>{{rental.returnDate}}</td>   
     </tr>
